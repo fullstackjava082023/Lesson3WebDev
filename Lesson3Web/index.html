@@ -1,0 +1,78 @@
+<!-- Create page with “Hello world” in <h1> header.
+    You can use id or class attribute.
+    
+    Add javascript and change text to your name and family name.
+    Add background color of your choice using style.
+    Mynode.style….
+     -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id ="myHeader" onclick=myfunction()>Hello world</h1>
+
+    <div>
+        <button>_</button><button>_</button><button>_</button><br>
+        <button>_</button><button>_</button><button>_</button><br>
+        <button>_</button><button>_</button><button>_</button><br>
+    </div>
+    
+    <button id ="myButton">Press me</button>
+
+    <script>
+       let move = "X"
+       let myButton = document.getElementById("myButton");
+       let myHeader = document.getElementById("myHeader");
+       myButton.addEventListener("click", ()=> {
+            if(myHeader.style.color === "red") {
+                myHeader.style.color = "black";
+            } else {
+                myHeader.style.color = "red";
+            }
+
+       });
+
+       let btns = document.querySelectorAll("button");
+       for (const btn of btns) {
+         btn.addEventListener("click", ()=> {
+            btn.innerText = move
+            if (move == "X") {
+                move = "O"
+            } else {
+                move = "X"
+            }
+            //disable button
+            btn.disabled = true
+         })
+       }
+
+
+
+       
+    //    Exercise make the same page with event listener.
+    //     Check if color red change it back to black on click. (change in the same function)
+
+       
+       
+       
+       
+       
+       
+       
+        const myfunction = function() {
+            //selecting html element h1
+            let myHeader = document.getElementById("myHeader");
+            //change the inner text
+            myHeader.innerText = "Arja Stark";
+            myHeader.style.backgroundColor = "lightblue"
+        }  
+          
+    </script>
+
+    <!-- <script src="functions.js"></script> -->
+</body>
+</html>
